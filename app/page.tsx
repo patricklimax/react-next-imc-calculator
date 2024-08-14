@@ -1,12 +1,9 @@
 'use client';
-import {
-	ArrowLeftCircleIcon,
-	ArrowRightIcon
-} from '@heroicons/react/24/outline';
+import { ArrowLeftCircleIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
-import { Header } from './components/Header';
-import { Square } from './components/Square';
+import { Header } from './components/header';
 import { Paragraph } from './components/paragraph';
+import { Square } from './components/square';
 import { levels } from './data/levels';
 import { calculateIMC } from './helpers/imc';
 import type { Level } from './types/level';
@@ -30,10 +27,10 @@ export default function Home() {
 	};
 
 	return (
-		<main className='container mx-auto flex gap-4 min-h-screen flex-col items-center justify-center py-10 px-6 md:px-0'>
+		<main className='container mx-auto flex min-h-screen flex-col items-center justify-center gap-4 px-6 py-10 md:px-0'>
 			<Header />
-			<div className='md:flex py-8 gap-10 justify-center'>
-				<section className='md:w-3/5 flex flex-col justify-between'>
+			<div className='justify-center gap-10 py-8 md:flex'>
+				<section className='flex flex-col justify-between md:w-3/5'>
 					<div>
 						<Paragraph
 							title={'O que é?'}
@@ -54,9 +51,9 @@ export default function Home() {
 							}
 						/>
 					</div>
-					<div className='flex gap-10 mb-4'>
+					<div className='mb-4 flex gap-10'>
 						<input
-							className='w-1/2 bg-transparent border-0 border-b-2 border-green-900 placeholder:text-green-900/70 outline-none px-2 py-1 placeholder:text-sm disabled:opacity-90'
+							className='w-1/2 border-0 border-b-2 border-green-900 bg-transparent px-2 py-1 outline-none placeholder:text-sm placeholder:text-green-900/70 disabled:opacity-90'
 							type='number'
 							placeholder='Altura (ex. 1.72 m)'
 							onChange={e => setHeightField(Number.parseFloat(e.target.value))}
@@ -64,7 +61,7 @@ export default function Home() {
 							disabled={!!toShow}
 						/>
 						<input
-							className='w-1/2 bg-transparent border-0 border-b-2 border-green-900 placeholder:text-green-900/70 outline-none px-2 py-1 placeholder:text-sm disabled:opacity-90'
+							className='w-1/2 border-0 border-b-2 border-green-900 bg-transparent px-2 py-1 outline-none placeholder:text-sm placeholder:text-green-900/70 disabled:opacity-90'
 							type='number'
 							placeholder='Peso (ex. 68.2kg)'
 							onChange={e => setWeightField(Number.parseFloat(e.target.value))}
@@ -74,15 +71,15 @@ export default function Home() {
 					</div>
 					{/* biome-ignore lint/a11y/useButtonType: <explanation> */}
 					<button
-						className='w-full flex items-center justify-center gap-2 p-3 mt-2 mb-7 md:mb-0 bg-green-900 text-green-300 text-lg rounded hover:bg-green-950 transition-all duration-500 ease-in-out disabled:opacity-90'
+						className='mb-7 mt-2 flex w-full items-center justify-center gap-2 rounded bg-green-900 p-3 text-lg text-green-300 transition-all duration-500 ease-in-out hover:bg-green-950 disabled:opacity-90 md:mb-0'
 						disabled={!!toShow}
 						onClick={headleCalculateIMC}>
 						Calcular <ArrowRightIcon className='h-6 w-6' />
 					</button>
 				</section>
-				<section className='md:w-2/5 flex'>
+				<section className='flex md:w-2/5'>
 					{!toShow && (
-						<div className='grid grid-cols-2 gap-1 flex-1 items-center justify-between'>
+						<div className='grid flex-1 grid-cols-2 items-center justify-between gap-1'>
 							{levels.map(level => (
 								<Square
 									key={level.title}
@@ -92,12 +89,12 @@ export default function Home() {
 						</div>
 					)}
 					{toShow && (
-						<div className='flex h-full relative text-3xl w-full'>
+						<div className='relative flex h-full w-full text-3xl'>
 							<ArrowLeftCircleIcon
 								onClick={handleBackBtn}
-								className='h-14 w-14 absolute top-1/2 -translate-y-1/2 bg-green-900 rounded-full text-green-200'
+								className='absolute top-1/2 h-14 w-14 -translate-y-1/2 rounded-full bg-green-900 text-green-200'
 							/>
-							<div className='flex w-full h-full'>
+							<div className='flex h-full w-full'>
 								<Square item={toShow} />
 							</div>
 						</div>
