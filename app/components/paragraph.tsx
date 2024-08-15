@@ -1,13 +1,14 @@
-type Props = {
-	title: string;
-	paragraph: string;
+import type { Paragraph } from '../types/paragraph';
+
+type ParagraphProps = {
+	paragraph: Paragraph;
 };
 
-export const Paragraph = ({ title, paragraph }: Props) => {
+export const ParagraphItem = ({ paragraph }: ParagraphProps) => {
 	return (
-		<div className='mb-4'>
-			<h1 className='text-base font-bold'>{title}</h1>
-			<p className='text-sm'>{paragraph}</p>
+		<div>
+			<h2 className='font-bold'>{paragraph.title}</h2>
+			<p className='text-sm'>{paragraph.content}</p>
 		</div>
 	);
 };
