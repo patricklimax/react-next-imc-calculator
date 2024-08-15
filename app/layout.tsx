@@ -1,7 +1,9 @@
+import Footer from './components/base/footer';
+import { Header } from './components/base/header';
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const manrope = Manrope({ subsets: ['latin'] });
 
 export const metadata = {
 	title: 'IMC APP',
@@ -15,7 +17,13 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='pt-BR'>
-			<body className={inter.className}>{children}</body>
+			<body className={manrope.className}>
+				<main className='mx-auto flex min-h-screen max-w-6xl flex-col gap-8 px-4 py-2 md:px-2'>
+					<Header />
+					{children}
+					<Footer />
+				</main>
+			</body>
 		</html>
 	);
 }
