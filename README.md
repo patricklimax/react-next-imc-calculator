@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Calculadora IMC
 
-## Getting Started
+## Descrição
 
-First, run the development server:
+A **Calculadora IMC** é uma aplicação web desenvolvida com o objetivo de calcular o Índice de Massa Corporal (IMC) com base no peso e altura fornecidos pelo usuário. Esta ferramenta permite uma análise rápida da condição física de uma pessoa, categorizando o resultado em diferentes faixas de IMC (baixo peso, normal, sobrepeso, etc.).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tecnologias
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **React**: Biblioteca JavaScript para a construção de interfaces de usuário. <br>
+- **Next.js**: Framework React para renderização do lado do servidor (SSR) e construção de aplicações web modernas.<br>
+- **Tailwind CSS**: Um framework CSS utilitário para estilização rápida e consistente.<br>
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática ao código, garantindo maior segurança e eficiência no desenvolvimento.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Funcionalidades
 
-## Learn More
+- **Cálculo do IMC**: O usuário pode inserir seu peso (em kg) e altura (em metros), e o sistema calculará automaticamente o IMC.<br>
+- **Classificação do IMC**: O resultado do IMC será classificado em categorias como: baixo peso, peso normal, sobrepeso e obesidade.<br>
+- **Feedback visual**: A interface ajusta sua exibição para destacar a categoria correspondente ao IMC calculado.<br>
+- **Responsividade**: A aplicação é responsiva, garantindo uma experiência fluida em dispositivos móveis e desktops.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
